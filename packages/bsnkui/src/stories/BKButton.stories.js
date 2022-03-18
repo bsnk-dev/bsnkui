@@ -30,6 +30,21 @@ Primary.args = {
     primary: true,
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+    secondary: true,
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+    danger: true,
+};
+
+export const Variant = Template.bind({});
+Variant.args = {
+    variant: true,
+};
+
 export const Medium = Template.bind({});
 Medium.args = {
     size: 'medium',
@@ -49,6 +64,8 @@ export const AllButtons = (args) => ({
         <div>
             <b-k-button primary size="medium">Button</b-k-button>
             <b-k-button secondary size="medium">Button</b-k-button>
+            <b-k-button danger size="medium">Button</b-k-button>
+            <b-k-button variant size="medium">Button</b-k-button>
             <b-k-button size="medium">Button</b-k-button>
         </div>
     `,
