@@ -1,0 +1,29 @@
+// Blues
+$bg_blue: #1890ff;
+$bg_blue_light: #3fa4ff;
+$bg_blue_dark: #2276c7;
+
+// Greys
+
+$grey: #cecece;
+
+// Light/Dark mode
+
+$primary: #000;
+
+$bg_primary: #ffffff;
+$bg_primary_light: #f5f5f5;
+$bg_primary_dark: #dcdcdc;
+
+$bg_secondary: #0bdaba;
+$bg_secondary_light: #33e3c3;
+$bg_secondary_dark: #0eb79c;
+
+.dark {
+  $bg_primary: #1d1d1d;
+  $bg_primary_hover: #363636;
+  $bg_secondary: rgba(78, 255, 255, 0.47);
+  $primary: #fff;
+}
+
+
