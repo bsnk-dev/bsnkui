@@ -5,7 +5,9 @@
           primary: primary,
           medium: size === 'medium',
           large: size === 'large',
-          secondary: secondary
+          secondary: secondary,
+          danger: danger,
+          variant: variant,
   }"
   >
     <slot></slot>
@@ -29,6 +31,14 @@ export default {
       type: Boolean,
       default: false
     },
+    variant: {
+      type: Boolean,
+      default: false
+    },
+    danger: {
+      type: Boolean,
+      default: false
+    },
     size: {
       type: String,
       default: 'small'
@@ -36,9 +46,9 @@ export default {
   },
 
   setup(props) {
-    const { primary, size, secondary } = toRefs(props)
+    const { primary, size, secondary, variant, danger } = toRefs(props)
 
-    return { primary, size, secondary }
+    return { primary, size, secondary, variant, danger }
   }
 }
 </script>
