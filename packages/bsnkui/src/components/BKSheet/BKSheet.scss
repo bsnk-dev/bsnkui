@@ -1,0 +1,15 @@
+@use '../../styles/colors.scss';
+
+.bk_sheet {
+  background-color: colors.$bg_primary_light;
+
+  border-radius: 10px;
+  border-color: colors.$grey;
+  border-style: solid;
+  border-width: 1px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
