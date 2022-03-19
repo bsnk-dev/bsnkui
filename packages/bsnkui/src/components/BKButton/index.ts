@@ -1,2 +1,2 @@
-import BKButton from './BKButton.vue';
-export default BKButton;
+import BKButton from './BKButton.vue'
+export default BKButton
