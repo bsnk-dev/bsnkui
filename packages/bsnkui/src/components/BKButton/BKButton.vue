@@ -8,6 +8,7 @@
           secondary: secondary,
           danger: danger,
           variant: variant,
+          link: link
   }"
   >
     <slot></slot>
@@ -17,7 +18,7 @@
 <script>
 import './BKButton.scss'
 import '../../styles/typography.scss'
-import {toRefs} from "vue";
+import { toRefs } from 'vue'
 
 export default {
   name: 'bk-button',
@@ -39,16 +40,20 @@ export default {
       type: Boolean,
       default: false
     },
+    link: {
+      type: Boolean,
+      default: false
+    },
     size: {
       type: String,
       default: 'small'
     }
   },
 
-  setup(props) {
-    const { primary, size, secondary, variant, danger } = toRefs(props)
+  setup (props) {
+    const { primary, size, secondary, variant, danger, link } = toRefs(props)
 
-    return { primary, size, secondary, variant, danger }
+    return { primary, size, secondary, variant, danger, link }
   }
 }
 </script>
