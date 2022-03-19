@@ -21,7 +21,7 @@ import '../../styles/typography.scss'
 import { toRefs } from 'vue'
 
 export default {
-  name: 'bk-button',
+  name: 'BkButton',
 
   props: {
     primary: {
