@@ -1,0 +1,22 @@
+@use '../../styles/colors.scss';
+@use '../../styles/borders.scss';
+
+.bk_tabs {
+  padding: 3px;
+
+  border: 1px solid transparent;
+  border-radius: borders.$bd_radius_xl;
+
+  background-color: colors.$highlight_grey_light;
+
+  width: fit-content;
+
+  display: flex;
+}
+
+.bk_vertical_separator {
+  width: 1px;
+  margin: auto 2px;
+  height: 90%;
+  background-color: colors.$highlight_grey;
+}

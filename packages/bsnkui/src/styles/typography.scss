@@ -1,5 +1,5 @@
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Verdana", Verdana, Arial, sans-serif;
 }
 
 .semibold {
@@ -11,5 +11,17 @@ body {
 }
 
 .extrabold {
+  font-weight: 700;
+}
+
+.title-bold {
+  font-family: "Tahoma", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.subtitle-bold {
+  font-family: "Tahoma", sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
 }

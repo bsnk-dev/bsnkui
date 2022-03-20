@@ -50,16 +50,16 @@
   }
 
   &.variant {
-    background-color: colors.$grey_light;
+    background-color: colors.$highlight_grey_light;
     border-color: transparent;
     color: colors.$bg_blue;
 
     &:hover {
-      background-color: colors.$grey_dark;
+      background-color: colors.$highlight_grey;
     }
 
     &:active {
-      background-color: colors.$grey;
+      background-color: colors.$highlight_grey_dark;
     }
   }
 
@@ -101,11 +101,11 @@
     color: colors.$bg_blue;
 
     &:hover {
-      background-color: colors.$grey_light;
+      background-color: colors.$highlight_grey;
     }
 
     &:active {
-      background-color: colors.$grey;
+      background-color: colors.$highlight_grey_dark;
     }
   }
 }
