@@ -1,12 +1,17 @@
 <template>
   <div class="bk_tabs">
-    <div v-for="(tab, index) in tabs" :key="tab" style="display: flex">
-      <b-k-tab :active="index === activeTabState.value" @click="activeTabState = index">
-        {{ tab }}
-      </b-k-tab>
+    <template v-if="tabs.length > 0">
+      <div v-for="(tab, index) in tabs" :key="tab" style="display: flex">
+        <b-k-tab :active="index === activeTabState.value" @click="activeTabState = index" :size="size">
+          {{ tab }}
+        </b-k-tab>
 
-      <div v-if="index !== tabs.length - 1" class="bk_vertical_separator"></div>
-    </div>
+        <b-k-separator v-if="index !== tabs.length - 1"></b-k-separator>
+      </div>
+    </template>
+    <template v-else>
+      <slot></slot>
+    </template>
   </div>
 </template>
 
@@ -14,12 +19,14 @@
 import './BKTabs.scss'
 import { computed, ref } from 'vue'
 import BKTab from '../BKTab'
+import BKSeparator from '../BKSeparator'
 
 export default {
   name: 'bkTabs',
 
   components: {
-    BKTab
+    BKTab,
+    BKSeparator
   },
 
   props: {
@@ -30,6 +37,10 @@ export default {
     tabs: {
       type: Array,
       default: () => []
+    },
+    size: {
+      type: String,
+      default: 'small'
     }
   },
 

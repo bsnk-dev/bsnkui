@@ -4,6 +4,8 @@ import BKModal from './BKModal'
 import BKTitle from './BKTitle'
 import BKTabs from './BKTabs'
 import BKTab from './BKTab'
+import BKSeparator from './BKSeparator'
+import BKNavigationItem from './BKNavigationItem'
 
 export {
   BKButton,
@@ -11,5 +13,7 @@ export {
   BKModal,
   BKTitle,
   BKTab,
-  BKTabs
+  BKTabs,
+  BKSeparator,
+  BKNavigationItem
 }

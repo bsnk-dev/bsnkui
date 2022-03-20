@@ -1,0 +1,8 @@
+@use '../../styles/colors.scss';
+
+.bk_vertical_separator {
+  width: 1px;
+  margin: auto 2px;
+  height: 90%;
+  background-color: colors.$highlight_grey;
+}
