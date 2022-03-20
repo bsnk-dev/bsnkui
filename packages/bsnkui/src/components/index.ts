@@ -6,6 +6,7 @@ import BKTabs from './BKTabs'
 import BKTab from './BKTab'
 import BKSeparator from './BKSeparator'
 import BKNavigationItem from './BKNavigationItem'
+import BKNavigationSidebar from './BKNavigationSidebar'
 
 export {
   BKButton,
@@ -15,5 +16,6 @@ export {
   BKTab,
   BKTabs,
   BKSeparator,
-  BKNavigationItem
+  BKNavigationItem,
+  BKNavigationSidebar
 }

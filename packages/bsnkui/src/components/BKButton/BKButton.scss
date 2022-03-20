@@ -11,6 +11,12 @@
 
   padding: 8px 12px;
 
+  display: inline-block;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
   cursor: pointer;
 
   &:hover {

@@ -1,5 +1,5 @@
 <template>
-    <div class="subtitle-bold">
+    <div class="subtitle-bold bk_title">
         <slot></slot>
     </div>
 </template>

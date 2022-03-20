@@ -1,5 +1,6 @@
 <template>
-  <button
+  <div
+      tabindex="0"
       class="bk_button semibold"
       :class="{
           primary: primary,
@@ -12,13 +13,12 @@
   }"
   >
     <slot></slot>
-  </button>
+  </div>
 </template>
 
 <script>
 import './BKButton.scss'
 import '../../styles/typography.scss'
-import { toRefs } from 'vue'
 
 export default {
   name: 'BkButton',
@@ -48,12 +48,6 @@ export default {
       type: String,
       default: 'small'
     }
-  },
-
-  setup (props) {
-    const { primary, size, secondary, variant, danger, link } = toRefs(props)
-
-    return { primary, size, secondary, variant, danger, link }
   }
 }
 </script>

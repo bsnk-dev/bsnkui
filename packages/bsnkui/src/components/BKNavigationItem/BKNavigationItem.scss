@@ -1,4 +1,21 @@
+@use '../../styles/colors.scss';
+
 .bk_navigation_item {
-  width: 100%;
+  display: block;
   margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+
+  &:focus {
+    background-color: colors.$bg_blue !important;
+    color: white !important;
+
+    &:hover {
+      background-color: colors.$bg_blue_light !important;
+    }
+
+    &:active {
+      background-color: colors.$bg_blue_dark !important;
+    }
+  }
 }
