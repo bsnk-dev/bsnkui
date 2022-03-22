@@ -1,20 +1,20 @@
-import { BKTabs, BKSheet, BKTitle, BKButton } from '../components'
+import { BkTabs, BkSheet, BkTitle, BkButton } from '../components'
 
 export default {
   title: 'bsnkui/BKTabs',
-  component: BKTabs,
+  component: BkTabs,
   argTypes: {
     tabs: ['One', 'Two', 'Three']
   }
 }
 
 const Template = (args) => ({
-  components: { BKTabs },
+  components: { BkTabs },
   setup () {
     return { args }
   },
-  template: `<b-k-tabs v-bind="args" style="max-width: 400px">
-  </b-k-tabs>`
+  template: `<bk-tabs v-bind="args" style="max-width: 400px">
+  </bk-tabs>`
 })
 
 export const Default = Template.bind({})
@@ -23,44 +23,44 @@ Default.args = {
 }
 
 export const CardExample = (args) => ({
-  components: { BKTabs, BKSheet, BKTitle, BKButton },
+  components: { BkTabs, BkSheet, BkTitle, BkButton },
   setup () {
     return { args }
   },
   template: `
-    <b-k-sheet style="max-width: 400px">
-      <b-k-title style="margin-top: 20px">
+    <bk-sheet style="max-width: 400px">
+      <bk-title style="margin-top: 20px">
         <span>Clock Settings</span>
-      </b-k-title>
+      </bk-title>
       
-      <b-k-tabs :tabs="['World Clock', 'Local Time', 'City Time']" style="margin-top: 10px">
-      </b-k-tabs>
+      <bk-tabs :tabs="['World Clock', 'Local Time', 'City Time']" style="margin-top: 10px">
+      </bk-tabs>
       
-      <b-k-sheet style="margin: 5px 0">
+      <bk-sheet style="margin: 5px 0">
         Clock settings are saved in the browser's local storage.
         They are not saved when you close the browser.
         
         Please refrain from using this feature for sensitive information.
-      </b-k-sheet>
+      </bk-sheet>
       
       <div style="margin-left: auto">
-        <b-k-button link size="medium">Cancel</b-k-button>
-        <b-k-button primary size="medium">Save</b-k-button>
+        <bk-button link size="medium">Cancel</bk-button>
+        <bk-button primary size="medium">Save</bk-button>
       </div>
-    </b-k-sheet>
+    </bk-sheet>
   `
 })
 
 export const CustomContent = (args) => ({
-  components: { BKTabs, BKButton },
+  components: { BkTabs, BkButton },
   setup () {
     return { args }
   },
   template: `
-    <b-k-tabs>
-      <b-k-button secondary size="medium">
+    <bk-tabs>
+      <bk-button secondary size="medium">
         1
-      </b-k-button>
-    </b-k-tabs>
+      </bk-button>
+    </bk-tabs>
   `
 })

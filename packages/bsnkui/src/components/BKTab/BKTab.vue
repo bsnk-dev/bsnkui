@@ -1,16 +1,16 @@
 <template>
-  <b-k-button class="bk_tab" link :size="size" :class="{active: active}">
+  <bk-button class="bk_tab" link :size="size" :class="{active: active}">
     <slot></slot>
-  </b-k-button>
+  </bk-button>
 </template>
 
 <script>
 import './BKTab.scss'
-import BKButton from '../BKButton'
+import BkButton from '../BKButton'
 
 export default {
   components: {
-    BKButton
+    BkButton
   },
 
   name: 'bkTab',
