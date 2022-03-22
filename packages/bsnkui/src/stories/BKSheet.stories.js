@@ -1,24 +1,24 @@
-import { BKSheet, BKButton } from '../components'
+import { BkSheet, BkButton } from '../components'
 
 export default {
   title: 'bsnkui/BKSheet',
-  component: BKSheet,
+  component: BkSheet,
   argTypes: {
   }
 }
 
 const Template = (args) => ({
-  components: { BKSheet },
+  components: { BkSheet },
   setup () {
     return { args }
   },
-  template: `<b-k-sheet v-bind="args" style="max-width: 400px">
+  template: `<bk-sheet v-bind="args" style="max-width: 400px">
     <h1 style="margin: 0">Hello World</h1>
   
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
     </p>
-  </b-k-sheet>`
+  </bk-sheet>`
 })
 
 export const Default = Template.bind({})
@@ -26,12 +26,12 @@ Default.args = {
 }
 
 export const Card = (args) => ({
-  components: { BKSheet, BKButton },
+  components: { BkSheet, BkButton },
   setup () {
     return { args }
   },
   template: `
-    <b-k-sheet v-bind="args" style="max-width: 400px">
+    <bk-sheet v-bind="args" style="max-width: 400px">
     <h1 style="margin: 0">Hello World</h1>
 
     <p>
@@ -41,12 +41,12 @@ export const Card = (args) => ({
     </p>
 
     <div style="margin-left: auto">
-      <b-k-button variant size="medium">
+      <bk-button variant size="medium">
         Cancel
-      </b-k-button>
-      <b-k-button primary size="medium" style="margin-left: 5px">
+      </bk-button>
+      <bk-button primary size="medium" style="margin-left: 5px">
         Done
-      </b-k-button>
+      </bk-button>
     </div>
-    </b-k-sheet>`
+    </bk-sheet>`
 })
