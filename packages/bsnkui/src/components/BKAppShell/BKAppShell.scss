@@ -1,0 +1,14 @@
+.bk_app_shell {
+  display: flex;
+  height: 100vh;
+
+  .app_container {
+    overflow: auto;
+    padding: 20px;
+  }
+
+  .show_sidebar_container {
+    padding-left: 15px;
+    padding-top: 20px;
+  }
+}
