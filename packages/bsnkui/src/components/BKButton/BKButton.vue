@@ -50,7 +50,7 @@ export default {
     }
   },
 
-  setup(props) {
+  setup (props) {
     const { primary, secondary, variant, danger, link, icon, size } = props
 
     const classes = {

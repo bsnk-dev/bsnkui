@@ -6,5 +6,6 @@
   &.active {
     background-color: colors.$bg_blue !important;
     color: white !important;
+    box-shadow: 0px 0px 4px  colors.$shadow_color;
   }
 }
