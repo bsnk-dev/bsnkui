@@ -1,0 +1,32 @@
+.bk-rich-card {
+  .bk_rich_card-header {
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  .bk_rich_card-body {
+    margin-bottom: 20px;
+  }
+
+  .bk_rich_card-image {
+    border: transparent;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    &.full {
+      margin-top: -41px;
+      margin-left: -21px;
+      margin-right: -22px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .bk_rich_card-actions {
+  }
+}
