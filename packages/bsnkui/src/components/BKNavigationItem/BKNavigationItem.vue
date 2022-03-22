@@ -1,18 +1,25 @@
 <template>
-  <b-k-tab class="bk_navigation_item">
+  <bk-tab class="bk_navigation_item" :class="{active}">
     <slot></slot>
-  </b-k-tab>
+  </bk-tab>
 </template>
 
 <script lang="ts">
 import './BKNavigationItem.scss'
-import BKTab from '../BKTab'
+import BkTab from '../BKTab'
 
 export default {
   name: 'bkNavigationItem',
 
   components: {
-    BKTab
+    BkTab
+  },
+
+  props: {
+    active: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
