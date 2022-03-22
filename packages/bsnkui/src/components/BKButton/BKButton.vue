@@ -11,7 +11,6 @@
 <script>
 import './BKButton.scss'
 import '../../styles/typography.scss'
-import '../../styles/colorClasses.scss'
 
 export default {
   name: 'BkButton',
