@@ -3,6 +3,32 @@ $bg_blue: #1890ff;
 $bg_blue_light: #3fa4ff;
 $bg_blue_dark: #2276c7;
 
+// Reds
+
+$bg_danger: #f5222d;
+$bg_danger_light: #ff424c;
+$bg_danger_dark: #cb1c25;
+
+// Greens
+$bg_green: #4eb41b;
+$bg_green_light: #6adc5e;
+$bg_green_dark: #3d9a3c;
+
+// Yellows
+$bg_yellow: #fadb14;
+$bg_yellow_light: #fef8e2;
+$bg_yellow_dark: #f7d025;
+
+// Magentas
+$bg_magenta: #eb2f96;
+$bg_magenta_light: #f5a5f5;
+$bg_magenta_dark: #b81188;
+
+// Oranges
+$bg_orange: #fa8c16;
+$bg_orange_light: #febb8f;
+$bg_orange_dark: #fa6d16;
+
 // Greys
 
 $grey: #cecece;
@@ -22,9 +48,7 @@ $bg_secondary: #0bdaba;
 $bg_secondary_light: #33e3c3;
 $bg_secondary_dark: #0eb79c;
 
-$bg_danger: #f5222d;
-$bg_danger_light: #ff424c;
-$bg_danger_dark: #cb1c25;
+
 
 // RGBA Highlights
 
@@ -32,8 +56,42 @@ $highlight_red: rgba(255, 0, 0, 0.15);
 $highlight_green: rgba(0, 255, 0, 0.15);
 $highlight_blue: rgba(0, 0, 255, 0.15);
 $highlight_yellow: rgba(255, 255, 0, 0.15);
+$highlight_orange: rgba(255, 165, 0, 0.15);
 $highlight_magenta: rgba(255, 0, 255, 0.15);
 
 $highlight_grey_light: rgba(200, 200, 200, 0.15);
 $highlight_grey_dark: rgba(100, 100, 100, 0.15);
 $highlight_grey: rgba(150, 150, 150, 0.15);
+
+$highlight_primary: rgba(0, 0, 0, 0.15);
+$highlight_primary_light: rgba(255, 255, 255, 0.15);
+$highlight_secondary: rgba(11, 219, 186, 0.15);
+$highlight_secondary_light: rgba(51, 227, 195, 0.15);
+
+// Shadow
+$shadow_color: rgba(0, 0, 0, 0.5);
+
+$colorsList:  (
+  "blue" $bg_blue,
+  "danger" $bg_danger,
+  "green" $bg_green,
+  "yellow" $bg_yellow,
+  "magenta" $bg_magenta,
+  "orange" $bg_orange,
+  "grey" $grey,
+  "grey_light" $grey_light,
+  "grey_light2" $grey_light2,
+  "grey_dark" $grey_dark,
+  "primary" $primary,
+  "bg_primary" $bg_primary,
+  "bg_secondary" $bg_secondary,
+  "highlight_red" $highlight_red,
+  "highlight_green" $highlight_green,
+  "highlight_blue" $highlight_blue,
+  "highlight_yellow" $highlight_yellow,
+  "highlight_orange" $highlight_orange,
+  "highlight_magenta" $highlight_magenta,
+  "highlight_grey" $highlight_grey,
+  "highlight_primary" $highlight_primary,
+  "highlight_secondary" $highlight_secondary
+);
