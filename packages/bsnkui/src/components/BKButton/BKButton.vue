@@ -1,16 +1,8 @@
 <template>
   <div
       tabindex="0"
-      class="bk_button semibold"
-      :class="{
-          primary: primary,
-          medium: size === 'medium',
-          large: size === 'large',
-          secondary: secondary,
-          danger: danger,
-          variant: variant,
-          link: link
-  }"
+      class="bk_button button_bold"
+      :class="`${classString} ${highlight ? 'bk_button_highlight_variant ' + highlight : ''}`"
   >
     <slot></slot>
   </div>
@@ -19,6 +11,7 @@
 <script>
 import './BKButton.scss'
 import '../../styles/typography.scss'
+import '../../styles/colorClasses.scss'
 
 export default {
   name: 'BkButton',
@@ -44,9 +37,38 @@ export default {
       type: Boolean,
       default: false
     },
+    icon: {
+      type: Boolean,
+      default: false
+    },
+    highlight: {
+      type: String,
+      default: ''
+    },
     size: {
       type: String,
       default: 'small'
+    }
+  },
+
+  setup(props) {
+    const { primary, secondary, variant, danger, link, icon, size } = props
+
+    const classes = {
+      primary: primary,
+      medium: size === 'medium',
+      large: size === 'large',
+      secondary: secondary,
+      danger: danger,
+      variant: variant,
+      icon: icon,
+      link: link
+    }
+
+    const classString = Object.keys(classes).filter(key => classes[key]).join(' ')
+
+    return {
+      classString
     }
   }
 }
