@@ -1,25 +1,25 @@
 <template>
   <div class="bk_modal overlay">
     <div class="bk_modal modal">
-      <b-k-sheet>
+      <bk-sheet>
         <slot></slot>
-      </b-k-sheet>
-      <b-k-sheet style="margin-top: 20px; padding: 5px" v-if="!actionsDisabled">
+      </bk-sheet>
+      <bk-sheet style="margin-top: 20px; padding: 5px" v-if="!actionsDisabled">
         <slot name="actions"></slot>
-      </b-k-sheet>
+      </bk-sheet>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import BKSheet from '../BKSheet'
+import BkSheet from '../BKSheet'
 import './BKModal.scss'
 
 export default {
   name: 'BkModal',
 
   components: {
-    BKSheet
+    BkSheet
   },
 
   props: {

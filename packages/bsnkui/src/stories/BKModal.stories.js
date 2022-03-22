@@ -1,33 +1,33 @@
-import { BKModal, BKButton, BKTitle } from '../components'
+import { BkModal, BkButton, BkTitle } from '../components'
 
 export default {
   title: 'bsnkui/BKModal',
-  component: BKModal,
+  component: BkModal,
   argTypes: {
   }
 }
 
 const Template = (args) => ({
-  components: { BKModal, BKButton, BKTitle },
+  components: { BkModal, BkButton, BkTitle },
   setup () {
     return { args }
   },
-  template: `<b-k-modal v-bind="args">
-    <b-k-title style="margin-top: 20px">Hello World</b-k-title>
+  template: `<bk-modal v-bind="args">
+    <bk-title style="margin-top: 20px">Hello World</bk-title>
 
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
     </p>
   
     <template #actions>
-      <b-k-button primary size="medium">
+      <bk-button primary size="medium">
         Confirm
-      </b-k-button>
-      <b-k-button link size="medium">
+      </bk-button>
+      <bk-button link size="medium">
         Cancel
-      </b-k-button>
+      </bk-button>
     </template>
-  </b-k-modal>`
+  </bk-modal>`
 })
 
 export const Default = Template.bind({})
