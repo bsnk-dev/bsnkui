@@ -4,7 +4,7 @@
       <b-k-sheet>
         <slot></slot>
       </b-k-sheet>
-      <b-k-sheet style="margin-top: 20px; padding: 5px">
+      <b-k-sheet style="margin-top: 20px; padding: 5px" v-if="!actionsDisabled">
         <slot name="actions"></slot>
       </b-k-sheet>
     </div>
@@ -20,6 +20,13 @@ export default {
 
   components: {
     BKSheet
+  },
+
+  props: {
+    actionsDisabled: {
+      type: Boolean,
+      default: false
+    }
   },
 
   setup () {
