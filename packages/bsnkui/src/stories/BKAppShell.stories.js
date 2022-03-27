@@ -49,7 +49,7 @@ const Template = (args) => ({
           <bk-tabs :tabs="['Alliance Viewer', 'City Explorer', 'Economy']"/>
 
           <div style="display: flex; flex-wrap: wrap; margin-top: 20px;">
-            <bk-rich-card style="max-width: 350px; margin-top: 20px; margin-left: 20px" v-for="i in 9" :key="i">
+            <bk-rich-card style="max-width: 350px; margin-top: 20px; margin-right: 20px" v-for="i in 9" :key="i">
               <template #title>
                 Nation #{{ i }}
               </template>
