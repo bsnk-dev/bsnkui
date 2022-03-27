@@ -9,6 +9,9 @@ import BkNavigationItem from './BKNavigationItem'
 import BkNavigationSidebar from './BKNavigationSidebar'
 import BkAppShell from './BKAppShell'
 import BkRichCard from './BKRichCard'
+import BkTable from './BKTable'
+import BkDataTable from './BKDataTable'
+import BkTextField from './BKTextField'
 
 export {
   BkButton,
@@ -21,5 +24,8 @@ export {
   BkNavigationItem,
   BkNavigationSidebar,
   BkAppShell,
-  BkRichCard
+  BkRichCard,
+  BkTable,
+  BkDataTable,
+  BkTextField
 }
