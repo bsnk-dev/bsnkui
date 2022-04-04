@@ -1,5 +1,5 @@
 <template>
-  <bk-table>
+  <bk-table :class="{selectable}">
     <thead>
       <tr>
         <th v-for="column of columnSettings" :key="column">
@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="row of sortedData" :key="row">
+      <tr v-for="row of sortedData" :key="row" @click="selectRow(row, $event)" :class="{active: selectable && selectedRows.includes(row), flatTop: selectedRowExistsBefore(row), flatBottom: selectedRowExistsAfter(row)}">
         <td v-for="column of columnSettings" :key="column">
           {{ row[column.key] }}
         </td>
@@ -49,6 +49,14 @@ export default {
     data: {
       type: Array,
       default: () => []
+    },
+    selectable: {
+      type: Boolean,
+      default: true
+    },
+    multiple: {
+      type: Boolean,
+      default: true
     },
     columns: {
       type: Array,
@@ -104,11 +112,55 @@ export default {
       sortData()
     }
 
+    const selectedRows = ref<any[]>([])
+
+    const selectRow = (row: any, event: MouseEvent) => {
+      const shiftSelect = event.shiftKey && props.multiple
+      const ctrlSelect = event.ctrlKey && props.multiple
+
+      if (!props.selectable) return
+
+      if (shiftSelect && selectedRows.value.length > 0) {
+        const lastSelectedIndex = sortedData.value.findIndex(r => r === selectedRows.value[selectedRows.value.length - 1])
+        const currentSelectedIndex = sortedData.value.findIndex(r => r === row)
+
+        selectedRows.value = sortedData.value.slice(Math.min(lastSelectedIndex, currentSelectedIndex), Math.max(lastSelectedIndex, currentSelectedIndex) + 1)
+      } else if (ctrlSelect) {
+        selectedRows.value = selectedRows.value.includes(row)
+          ? selectedRows.value.filter(r => r !== row)
+          : [...selectedRows.value, row]
+      } else {
+        selectedRows.value = [row]
+      }
+    }
+
+    const selectedRowExistsBefore = (row: any) => {
+      if (!selectedRows.value.includes(row)) return false
+
+      const beforeRow = sortedData.value.findIndex(r => r === row) - 1
+      if (beforeRow < 0) return false
+
+      return selectedRows.value.includes(sortedData.value[beforeRow])
+    }
+
+    const selectedRowExistsAfter = (row: any) => {
+      if (!selectedRows.value.includes(row)) return false
+
+      const afterRow = sortedData.value.findIndex(r => r === row) + 1
+      if (afterRow >= sortedData.value.length) return false
+
+      return selectedRows.value.includes(sortedData.value[afterRow])
+    }
+
     return {
       columnSettings,
       toggleSort,
+      selectRow,
+      selectedRows,
       sortKey,
-      sortedData
+      sortedData,
+      selectedRowExistsBefore,
+      selectedRowExistsAfter
     }
   }
 }
