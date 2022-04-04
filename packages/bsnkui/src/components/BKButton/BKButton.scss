@@ -24,7 +24,7 @@
     background-color: colors.$bg_primary_light;
   }
 
-  &:active {
+  &:active,&.active {
     background-color: colors.$bg_primary_dark;
   }
 
@@ -49,7 +49,7 @@
       background-color: colors.$bg_blue_light;
     }
 
-    &:active {
+    &:active,&.active {
       background-color: colors.$bg_blue;
     }
 
@@ -65,7 +65,7 @@
       background-color: colors.$highlight_grey;
     }
 
-    &:active {
+    &:active,&.active {
       background-color: colors.$highlight_grey_dark;
     }
   }
@@ -79,7 +79,7 @@
       background-color: colors.$bg_secondary_light;
     }
 
-    &:active {
+    &:active,&.active {
       background-color: colors.$bg_secondary_dark;
     }
 
@@ -95,7 +95,7 @@
       background-color: colors.$bg_danger_light;
     }
 
-    &:active {
+    &:active,&.active {
       background-color: colors.$bg_danger_dark;
     }
 
@@ -111,7 +111,7 @@
       background-color: colors.$highlight_grey;
     }
 
-    &:active {
+    &:active,&.active {
       background-color: colors.$highlight_grey_dark;
     }
   }
@@ -134,7 +134,7 @@
       background-color: colors.$highlight_grey;
     }
 
-    &:active {
+    &:active,&.active {
       background-color: colors.$highlight_grey_dark;
     }
 
@@ -164,7 +164,7 @@
       &:hover {
         background-color: transparentize(nth($type, 2), 0.6);
       }
-      &:active {
+      &:active,&.active {
         background-color: transparentize(nth($type, 2), 0.5);
       }
     }
