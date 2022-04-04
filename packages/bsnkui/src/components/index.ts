@@ -12,6 +12,7 @@ import BkRichCard from './BKRichCard'
 import BkTable from './BKTable'
 import BkDataTable from './BKDataTable'
 import BkTextField from './BKTextField'
+import BkDropdown from './BKDropdown'
 
 export {
   BkButton,
@@ -27,5 +28,6 @@ export {
   BkRichCard,
   BkTable,
   BkDataTable,
-  BkTextField
+  BkTextField,
+  BkDropdown
 }
