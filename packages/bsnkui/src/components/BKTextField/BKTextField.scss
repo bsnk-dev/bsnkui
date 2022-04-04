@@ -12,6 +12,24 @@
     margin-top: -2px;
   }
 
+  & .icon-after {
+    margin-left: auto;
+    z-index: 1;
+    margin-top: -2px;
+    position: relative;
+    right: 25px;
+  }
+
+  &.disabled {
+    input {
+      &:active {
+        outline: none;
+      }
+
+      color: transparentize(colors.$primary, 0.8)
+    }
+  }
+
   & input {
     display: flex;
     cursor: text;
@@ -33,12 +51,12 @@
     }
 
     width: 100%;
-    height: 25px;
+    height: 30px;
   }
 
   &.medium {
     & input {
-      height: 30px;
+      height: 34px;
       font-size: 1em;
     }
   }
@@ -62,4 +80,12 @@
   &.has_icon input {
     padding-left: 26px;
   }
+
+  &.has_icon.icon-after input {
+    padding-right: 26px;
+  }
+}
+
+.bk_text-field-label {
+  margin-bottom: 3px;
 }

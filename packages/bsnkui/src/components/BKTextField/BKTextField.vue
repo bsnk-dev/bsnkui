@@ -7,7 +7,10 @@
       <div v-if="hasSlot('icon')" class="icon">
         <slot name="icon"></slot>
       </div>
-      <input type="text"/>
+      <input type="text" :value="value" @input="$emit('input', $event)" @change="$emit('change', $event)" :disabled="disabled"/>
+      <div v-if="hasSlot('icon-after')" class="icon-after">
+        <slot name="icon-after"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +29,11 @@ export default {
       default: ''
     },
 
+    value: {
+      type: String,
+      default: ''
+    },
+
     size: {
       type: String,
       default: 'small'
@@ -34,19 +42,31 @@ export default {
     filled: {
       type: Boolean,
       default: false
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+
+    disabledInvisible: {
+      type: Boolean,
+      default: false
     }
   },
 
   setup (props, { slots }) {
-    const { size, filled } = props
+    const { size, filled, disabled, disabledInvisible } = props
 
     const { hasSlot } = useHasSlot(slots)
 
     const additionalClasses = {
       has_icon: hasSlot('icon'),
+      has_icon_after: hasSlot('icon-after'),
       medium: size === 'medium',
       large: size === 'large',
-      filled
+      filled,
+      disabled: !disabledInvisible && disabled
     }
 
     const additionalClassString = Object.keys(additionalClasses)
