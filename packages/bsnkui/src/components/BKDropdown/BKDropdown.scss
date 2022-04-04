@@ -1,0 +1,47 @@
+@use '../../styles/colors.scss';
+
+.bk_dropdown-container {
+  max-width: 250px;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+
+  .bk_dropdown-field {
+    .bk_text-field {
+      cursor: pointer;
+
+      input {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bk_dropdown-menu {
+    position: absolute;
+    top: auto;
+    margin-top: 5px;
+
+    z-index: 10;
+
+    box-shadow: 0px 0px 12px  colors.$shadow_color_light;
+
+    min-width: 125px;
+
+    max-height: 80vh;
+    overflow-y: auto;
+
+    .bk_dropdown-entry {
+      padding: 4px 4px 4px 8px;
+      border-radius: 8px;
+      text-align: left;
+      font-weight: normal;
+      color: colors.$primary;
+
+      &:active,&.active {
+        background-color: colors.$bg_blue;
+        color: white;
+      }
+    }
+  }
+}
