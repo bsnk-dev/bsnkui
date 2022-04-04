@@ -1,5 +1,5 @@
 <template>
-  <div class="bk_sheet">
+  <div class="bk_sheet" :class="{'less-padding': lessPadding}">
     <slot></slot>
   </div>
 </template>
@@ -9,6 +9,13 @@ import './BKSheet.scss'
 
 export default {
   name: 'bkSheet',
+
+  props: {
+    lessPadding: {
+      type: Boolean,
+      default: false
+    }
+  },
 
   setup () {
 
