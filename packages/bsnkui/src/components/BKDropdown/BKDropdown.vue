@@ -1,5 +1,5 @@
 <template>
-  <div class="bk_dropdown-container">
+  <div class="bk_dropdown-container" v-click-outside="clickOff">
     <bk-text-field
       disabled
       disabled-invisible
@@ -22,7 +22,7 @@
       </template>
     </bk-text-field>
 
-    <bk-sheet class="bk_dropdown-menu" v-bk-click-outside="clickOff" style="padding: 4px" v-if="open" @keydown.down="arrowNavigate('down')" @keydown.up="arrowNavigate('up')">
+    <bk-sheet class="bk_dropdown-menu" style="padding: 4px" v-if="open" @keydown.down="arrowNavigate('down')" @keydown.up="arrowNavigate('up')">
       <bk-button
           link
           class="bk_dropdown-entry"
@@ -51,7 +51,7 @@ import './BKDropdown.scss'
 import BKTextField from '../BKTextField'
 import BKSheet from '../BKSheet'
 import BKButton from '../BKButton'
-import BkClickOutside from '../../directives/BKClickOutside'
+import { directive as clickOutside } from '../../directives/BKClickOutside'
 import useHasSlot from '../../mixins/useHasSlot'
 import { ref } from 'vue'
 
@@ -63,7 +63,7 @@ export default {
   },
 
   directives: {
-    BkClickOutside
+    clickOutside
   },
 
   props: {
