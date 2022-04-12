@@ -98,7 +98,7 @@ export default {
       selected.value = item
       open.value = false
 
-      emit('input', item)
+      emit('change:modelValue', item)
     }
 
     const toggleOpen = () => {

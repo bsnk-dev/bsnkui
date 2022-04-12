@@ -37,6 +37,7 @@
       text-align: left;
       font-weight: normal;
       color: colors.$primary;
+      margin-bottom: 2px;
 
       &:active,&.active {
         background-color: colors.$bg_blue;
