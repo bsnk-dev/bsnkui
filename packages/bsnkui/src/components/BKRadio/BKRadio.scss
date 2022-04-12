@@ -1,0 +1,53 @@
+@use '../../styles/colors.scss';
+
+.bk-radio {
+  display: flex;
+  align-items: center;
+
+  input[type=radio] {
+    background-color: colors.$bg_primary;
+    border-color: colors.$grey;
+    border-width: 1px;
+    border-style: solid;
+
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+}
+
+.bk-radio-card {
+  cursor: pointer;
+
+  box-shadow: 0px 0px 12px  colors.$shadow_color_light;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 400px;
+  min-height: 24px;
+
+  margin-bottom: 10px;
+
+
+
+  .active-content-container {
+    transition: max-height 0.25s ease-in-out;
+    overflow: hidden;
+    max-height: 0px;
+  }
+
+  &.active {
+    outline: 2px solid colors.$bg_blue;
+    .active-content-container {
+      max-height: 500px;
+      transition: max-height 0.25s ease-in-out;
+    }
+  }
+
+  .selected-icon {
+    color: colors.$bg_blue;
+    margin-left: auto;
+  }
+}
