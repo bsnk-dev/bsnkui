@@ -40,6 +40,8 @@ $grey_very_dark: #444444;
 // Light/Dark mode
 
 $primary: #000;
+$primary_light: #565656;
+$primary_light2: #8c8c8c;
 
 $bg_primary: #ffffff;
 $bg_primary_light: #f5f5f5;
@@ -85,6 +87,8 @@ $colorsList:  (
   "grey_light2" $grey_light2,
   "grey_dark" $grey_dark,
   "primary" $primary,
+  "primary_light" $primary_light,
+  "primary_light2" $primary_light2,
   "bg_primary" $bg_primary,
   "bg_secondary" $bg_secondary,
   "highlight_red" $highlight_red,
@@ -97,3 +101,9 @@ $colorsList:  (
   "highlight_primary" $highlight_primary,
   "highlight_secondary" $highlight_secondary
 );
+
+@each $type in $colorsList {
+  .text-color-#{nth($type, 1)} {
+    color: nth($type, 2);
+  }
+}
