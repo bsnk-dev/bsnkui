@@ -6,7 +6,7 @@
           {{ tab }}
         </bk-tab>
 
-        <bk-separator v-if="index !== tabs.length - 1"></bk-separator>
+        <bk-separator v-if="index !== tabs.length - 1" :horizontal="false"></bk-separator>
       </div>
     </template>
     <template v-else>
