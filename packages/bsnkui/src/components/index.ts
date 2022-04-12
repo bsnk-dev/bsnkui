@@ -13,6 +13,8 @@ import BkTable from './BKTable'
 import BkDataTable from './BKDataTable'
 import BkTextField from './BKTextField'
 import BkDropdown from './BKDropdown'
+import BkCheckbox from './BKCheckbox'
+import BkRadio from './BKRadio'
 
 export {
   BkButton,
@@ -29,5 +31,7 @@ export {
   BkTable,
   BkDataTable,
   BkTextField,
-  BkDropdown
+  BkDropdown,
+  BkCheckbox,
+  BkRadio
 }
