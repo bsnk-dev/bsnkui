@@ -1,9 +1,11 @@
 import { BkRichCard, BkButton, BkDataTable } from '../components'
+import { ref } from 'vue'
 
 export default {
   title: 'bsnkui/BKDataTable',
   component: BkDataTable,
   argTypes: {
+    onChange: {}
   }
 }
 
@@ -33,7 +35,9 @@ const Template = (args) => ({
       }
     ]
 
-    return { ...args, data }
+    const selected = ref([data[0]])
+
+    return { ...args, data, selected }
   },
   template: `
     <bk-rich-card style="max-width: 400px; margin-top: 50px; margin-left: 50px;">
@@ -41,7 +45,13 @@ const Template = (args) => ({
         Personnel Directory
       </template>
       <div>
-        <bk-data-table
+        <div>
+          Selected: {{ selected.map(r => r.name).join(', ') }}
+        </div>
+        
+        <bk-data-table 
+          v-bind="args"
+          v-model="selected"
           :data="data"
           :columns="[
               {

@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="row of sortedData" :key="row" @click="selectRow(row, $event)" :class="{active: selectable && selectedRows.includes(row), flatTop: selectedRowExistsBefore(row), flatBottom: selectedRowExistsAfter(row)}">
+      <tr v-for="row of sortedData" :key="row" @click="selectRow(row, $event)" :class="{active: selectable && selectedRowKeys.includes(row[rowKey]), flatTop: selectedRowExistsBefore(row), flatBottom: selectedRowExistsAfter(row)}">
         <td v-for="column of columnSettings" :key="column">
           {{ row[column.key] }}
         </td>
@@ -50,6 +50,14 @@ export default {
       type: Array,
       default: () => []
     },
+    value: {
+      type: Array,
+      default: () => []
+    },
+    rowKey: {
+      type: String,
+      default: 'id'
+    },
     selectable: {
       type: Boolean,
       default: true
@@ -69,7 +77,16 @@ export default {
     BkButton
   },
 
-  setup (props) {
+  watch: {
+    value: {
+      immediate: true,
+      handler (value: any) {
+        this.selectedRows = value
+      }
+    }
+  },
+
+  setup (props, { emit }) {
     const columnSettings: Ref<SortableColumn[]> = ref(props.columns)
     const sortedData = ref(JSON.parse(JSON.stringify(props.data)))
 
@@ -112,7 +129,8 @@ export default {
       sortData()
     }
 
-    const selectedRows = ref<any[]>([])
+    const selectedRows = ref<any[]>([...props.value])
+    const selectedRowKeys = ref<string[]>(selectedRows.value.map(r => r[props.rowKey]))
 
     const selectRow = (row: any, event: MouseEvent) => {
       const shiftSelect = event.shiftKey && props.multiple
@@ -132,6 +150,10 @@ export default {
       } else {
         selectedRows.value = [row]
       }
+
+      selectedRowKeys.value = selectedRows.value.map(r => r[props.rowKey])
+
+      emit('update:modelValue', selectedRows.value)
     }
 
     const selectedRowExistsBefore = (row: any) => {
@@ -157,6 +179,7 @@ export default {
       toggleSort,
       selectRow,
       selectedRows,
+      selectedRowKeys,
       sortKey,
       sortedData,
       selectedRowExistsBefore,
