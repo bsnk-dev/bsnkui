@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;900&display=swap');
+
 body {
-  font-family: "Verdana", Verdana, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
 }
 
@@ -10,6 +12,13 @@ body {
 .label {
   font-size: 0.9em;
   font-weight: bold;
+}
+
+.nav_label {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .semibold {
