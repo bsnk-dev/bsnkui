@@ -3,14 +3,17 @@
       tabindex="0"
       class="bk_button button_bold"
       :class="`${classString} ${highlight ? 'bk_button_highlight_variant ' + highlight : ''}`"
+      @click="onClick"
   >
     <slot></slot>
+    <button style="display: none" type="submit" ref="submit" v-if="submit"></button>
   </div>
 </template>
 
 <script>
 import './BKButton.scss'
 import '../../styles/typography.scss'
+import { ref } from 'vue'
 
 export default {
   name: 'BkButton',
@@ -47,27 +50,39 @@ export default {
     size: {
       type: String,
       default: 'small'
+    },
+    submit: {
+      type: Boolean,
+      default: false
     }
   },
 
-  setup (props) {
-    const { primary, secondary, variant, danger, link, icon, size } = props
-
+  setup (props, { emit }) {
     const classes = {
-      primary: primary,
-      medium: size === 'medium',
-      large: size === 'large',
-      secondary: secondary,
-      danger: danger,
-      variant: variant,
-      icon: icon,
-      link: link
+      primary: props.primary,
+      medium: props.size === 'medium',
+      large: props.size === 'large',
+      secondary: props.secondary,
+      danger: props.danger,
+      variant: props.variant,
+      icon: props.icon,
+      link: props.link
+    }
+
+    const submit = ref(null)
+
+    const onClick = (event) => {
+      if (props.submit === true) {
+        submit.value.click()
+      }
+      emit('onclick', event)
     }
 
     const classString = Object.keys(classes).filter(key => classes[key]).join(' ')
 
     return {
-      classString
+      classString,
+      onClick
     }
   }
 }
