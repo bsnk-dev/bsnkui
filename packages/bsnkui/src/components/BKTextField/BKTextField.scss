@@ -71,7 +71,7 @@
   &.filled {
     & input {
       border-radius: 10px;
-      background-color: colors.$highlight_grey;
+      background-color: colors.$highlight_grey_light;
     }
 
     color: transparentize(colors.$grey_very_dark, 0.2);
