@@ -1,0 +1,18 @@
+@use '../../styles/colors.scss';
+@use '../../styles/borders.scss';
+
+.bk-checkbox {
+  display: flex;
+  align-items: center;
+
+  & .checkbox {
+    background-color: colors.$bg_primary;
+    border-color: colors.$grey;
+    border-width: 1px;
+    border-style: solid;
+
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+}
