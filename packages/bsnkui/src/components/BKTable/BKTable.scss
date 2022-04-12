@@ -8,9 +8,9 @@
   border-collapse: collapse;
 
   tr {
-      $radius: 6px;
+      $radius: 8px;
 
-      padding: 2px 4px;
+      padding: 4px 6px;
       border-radius: $radius;
 
       td:first-child {
