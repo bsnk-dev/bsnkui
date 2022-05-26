@@ -1,3 +1,5 @@
+@use '../../styles/colors.scss';
+
 .bk-rich-card {
   .bk_rich_card-header {
     margin-bottom: 20px;
@@ -29,5 +31,17 @@
 
   .bk_rich_card-actions {
     display: flex
+  }
+}
+
+.bk-clickable_card_overlay {
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparentize(colors.$grey_light, 0.4);
+  }
+
+  &:active {
+    background-color: transparentize(colors.$grey_dark, 0.5);
   }
 }

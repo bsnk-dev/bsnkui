@@ -6,7 +6,7 @@
       @click="onClick"
   >
     <slot></slot>
-    <button style="display: none" type="submit" ref="submit" v-if="submit"></button>
+    <button style="display: none" :form="form" type="submit" ref="submitElement" v-if="submit"></button>
   </div>
 </template>
 
@@ -54,6 +54,14 @@ export default {
     submit: {
       type: Boolean,
       default: false
+    },
+    form: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -66,15 +74,22 @@ export default {
       danger: props.danger,
       variant: props.variant,
       icon: props.icon,
-      link: props.link
+      link: props.link,
+      disabled: props.disabled
     }
 
-    const submit = ref(null)
+    const submitElement = ref(null)
 
     const onClick = (event) => {
-      if (props.submit === true) {
-        submit.value.click()
+      if (props.disabled) {
+        event.stopImmediatePropagation()
+        return
       }
+
+      if (props.submit === true) {
+        submitElement.value.click()
+      }
+
       emit('onclick', event)
     }
 
@@ -82,7 +97,8 @@ export default {
 
     return {
       classString,
-      onClick
+      onClick,
+      submitElement
     }
   }
 }

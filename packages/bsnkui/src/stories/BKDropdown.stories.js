@@ -30,6 +30,34 @@ Default.args = {
   ]
 }
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+  label: 'Label',
+  size: 'small',
+  filled: true,
+  items: [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4'
+  ],
+  disabled: true
+}
+
+export const Multiple = Template.bind({})
+Multiple.args = {
+  label: 'Label',
+  size: 'small',
+  filled: true,
+  items: [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4'
+  ],
+  multiple: true
+}
+
 export const CardExample = () => ({
   components: { BkTabs, BkRichCard, BkButton, BkDropdown, BkTextField, BkSheet },
   template: `
@@ -64,6 +92,7 @@ export const CardExample = () => ({
             <div style="margin-top: 20px;">
               Automatically unlock doors for <bk-dropdown
                   style="display: inline-block"
+                  multiple
                   :items="[
                 'Admins',
                 'Members',
@@ -85,7 +114,7 @@ export const CardExample = () => ({
       </div>
     
       <template #actions>
-        <div style="display: flex">
+        <div style="display: flex; width: 100%">
           <bk-button link class="red" style="margin-left: auto">
             Discard
           </bk-button>

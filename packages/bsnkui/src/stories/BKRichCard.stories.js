@@ -4,7 +4,8 @@ export default {
   title: 'bsnkui/BKRichCard',
   component: BkRichCard,
   argTypes: {
-    title: 'Hello World'
+    title: 'Hello World',
+    onClick: {}
   }
 }
 
@@ -118,4 +119,10 @@ export const Listing = (args) => ({
 })
 Listing.args = {
   title: 'Hello World'
+}
+
+export const Clickable = Template.bind({})
+Clickable.args = {
+  title: 'Hello World',
+  onClick: () => {}
 }

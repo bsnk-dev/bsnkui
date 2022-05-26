@@ -83,7 +83,7 @@
       background-color: colors.$bg_secondary_dark;
     }
 
-    box-shadow: inset 0 2px 0 0 rgba(255, 255, 255, 0.5)
+    /* box-shadow: inset 0 2px 0 0 rgba(255, 255, 255, 0.5) */
   }
 
   &.danger {
@@ -99,7 +99,7 @@
       background-color: colors.$bg_danger_dark;
     }
 
-    box-shadow: inset 0 2px 0 0 rgba(255, 255, 255, 0.5)
+    /* box-shadow: inset 0 2px 0 0 rgba(255, 255, 255, 0.5) */
   }
 
   &.link {
@@ -146,6 +146,20 @@
     &.large {
       width: 32px;
       height: 32px;
+    }
+  }
+
+  &.disabled {
+    background-color: colors.$highlight_grey;
+    color: colors.$highlight_grey_dark;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: colors.$highlight_grey;
+    }
+
+    &:active,&.active {
+      background-color: colors.$highlight_grey;
     }
   }
 }

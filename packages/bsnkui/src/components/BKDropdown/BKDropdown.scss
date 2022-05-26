@@ -39,6 +39,10 @@
       color: colors.$primary;
       margin-bottom: 2px;
 
+      height: 21px;
+
+      display: flex;
+
       &:active,&.active {
         background-color: colors.$bg_blue;
         color: white;

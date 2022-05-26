@@ -1,5 +1,5 @@
 <template>
-  <bk-sheet>
+  <bk-sheet :class="($attrs.onClick) ? 'bk-clickable_card_overlay' : ''" @click="$event.preventDefault(); $emit('onClick', $event)">
     <div class="bk-rich-card">
       <div class="bk_rich_card-image full" v-if="hasSlot('image')">
         <slot name="image"></slot>

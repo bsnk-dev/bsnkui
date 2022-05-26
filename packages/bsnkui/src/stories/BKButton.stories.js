@@ -60,6 +60,12 @@ Large.args = {
   size: 'large'
 }
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+  size: 'large',
+  disabled: true
+}
+
 export const Icon = (args) => ({
   components: { BkButton },
   setup () {

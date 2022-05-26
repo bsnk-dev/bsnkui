@@ -94,31 +94,32 @@ export const ExampleCard = () => ({
         upgrading your plan.
       </p>
       
-      <bk-radio card name="1" :value="selected === 1" @click="selected = 1">
-        <template #label>
-          <h2>Startup</h2>
-          <h3>$24.99/mo</h3>
-        </template>
-      </bk-radio>
-      <bk-radio card name="2" :value="selected === 2" @click="selected = 2">
-        <template #label>
-          <h2>Corporation</h2>
-          <h3>$99.99/mo</h3>
-        </template>
-        <template #active-content>
-          <p>
-            In addition to all the features you'd normally get, you receive:
-          </p>
-          <ol>
-            <li>20 Dedicated Armored Vehicles</li>
-            <li>Onsite Blast Doors</li>
-            <li>Never-down Servers</li>
-          </ol>
-        </template>
-      </bk-radio>
-    
+      <form>
+        <bk-radio card name="startup_subscription" :value="selected === 1" @click="selected = 1">
+          <template #label>
+            <h2>Startup</h2>
+            <h3>$24.99/mo</h3>
+          </template>
+        </bk-radio>
+        <bk-radio card name="corporate_subscription" :value="selected === 2" @click="selected = 2">
+          <template #label>
+            <h2>Corporation</h2>
+            <h3>$99.99/mo</h3>
+          </template>
+          <template #active-content>
+            <p>
+              In addition to all the features you'd normally get, you receive:
+            </p>
+            <ol>
+              <li>20 Dedicated Armored Vehicles</li>
+              <li>Onsite Blast Doors</li>
+              <li>Never-down Servers</li>
+            </ol>
+          </template>
+        </bk-radio>
+      </form>
       <template #actions>
-        <bk-button primary size="medium" style="margin-left: auto">Subscribe</bk-button>
+        <bk-button primary size="medium" submit style="margin-left: auto">Subscribe</bk-button>
       </template>
     </bk-rich-card>
   `
