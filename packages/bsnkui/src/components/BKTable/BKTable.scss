@@ -58,12 +58,12 @@
     tbody {
       tr {
         &.active {
-          background-color: colors.$bg_blue;
+          background-color: colors.$bg_active;
           color: white;
 
           td {
             color: white;
-            background-color: colors.$bg_blue;
+            background-color: colors.$bg_active;
           }
         }
       }

@@ -34,18 +34,59 @@ $bg_orange_dark: #fa6d16;
 $grey: #cecece;
 $grey_light: #f5f5f5;
 $grey_light2: #e8e8e8;
-$grey_dark: #e0e0e0;
-$grey_very_dark: #444444;
+$grey_dark: #dadada;
+$grey_very_dark1: #525252;
+$grey_very_dark2: #444444;
+$grey_very_dark3: #333333;
 
 // Light/Dark mode
 
-$primary: #000;
-$primary_light: #565656;
-$primary_light2: #8c8c8c;
+body {
+  --primary: #000;
+  --primary-light: #565656;
+  --primary-dark: #2f2f2f;
 
-$bg_primary: #ffffff;
-$bg_primary_light: #f5f5f5;
-$bg_primary_dark: #dcdcdc;
+  --bg_active: #{$bg_blue};
+  --bg_active_light: #{$bg_blue_light};
+  --bg_active_dark: #{$bg_blue_dark};
+
+  --bg_primary: #ffffff;
+  --bg_primary_light: #f5f5f5;
+  --bg_primary_border-accent: #{$grey_dark};
+  --bg_primary_dark: #dcdcdc;
+}
+
+body.themed--dark {
+  color: var(--primary);
+  background-color: var(--bg_primary_dark);
+
+  --primary: white;
+  --primary-light: #fafafa;
+  --primary-dark: #f0f0f0;
+
+  --bg_active: #{$bg_blue};
+  --bg_active_light: #{$bg_blue_light};
+  --bg_active_dark: #{$bg_blue_dark};
+
+  --bg_primary: #{$grey_very_dark2};
+  --bg_primary_light: #{$grey_very_dark1};
+  --bg_primary_border-accent: #808080;
+  --bg_primary_dark: #{$grey_very_dark3};
+}
+
+$primary: var(--primary);
+$primary_light: var(--primary-light);
+$primary_light2: var(--primary-dark);
+$primary_dark: var(--primary-dark);
+
+$bg_active: var(--bg_active);
+$bg_active_light: var(--bg_active_light);
+$bg_active_dark: var(--bg_active_dark);
+
+$bg_primary: var(--bg_primary);
+$bg_primary_light: var(--bg_primary_light);
+$bg_primary_border-accent: var(--bg_primary_border-accent);
+$bg_primary_dark: var(--bg_primary_dark);
 
 $bg_secondary: #0bdaba;
 $bg_secondary_light: #33e3c3;
@@ -86,10 +127,6 @@ $colorsList:  (
   "grey_light" $grey_light,
   "grey_light2" $grey_light2,
   "grey_dark" $grey_dark,
-  "primary" $primary,
-  "primary_light" $primary_light,
-  "primary_light2" $primary_light2,
-  "bg_primary" $bg_primary,
   "bg_secondary" $bg_secondary,
   "highlight_red" $highlight_red,
   "highlight_green" $highlight_green,
@@ -106,4 +143,17 @@ $colorsList:  (
   .text-color-#{nth($type, 1)} {
     color: nth($type, 2);
   }
+}
+
+// manual colors
+.text-color-primary {
+  color: var(--primary);
+}
+
+.text-color-primary-light {
+  color: var(--primary-light);
+}
+
+.text-color-primary-dark {
+  color: var(--primary-dark);
 }

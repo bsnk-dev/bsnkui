@@ -22,7 +22,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" v-if="selected">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <svg viewBox="0 0 24 24" style="height: 24px; width: 24px" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" class="text-color-primary_light2" v-else>
+        <svg viewBox="0 0 24 24" style="height: 24px; width: 24px" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" class="text-color-primary-light" v-else>
           <path stroke-linecap="round" stroke-linejoin="round" d="M 21 12 C 21 18.928 13.5 23.258 7.5 19.794 C 4.715 18.187 3 15.215 3 12 C 3 5.072 10.5 0.742 16.5 4.206 C 19.285 5.813 21 8.785 21 12 Z"/>
         </svg>
       </div>

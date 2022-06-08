@@ -36,7 +36,7 @@
   }
 
   &.active {
-    outline: 2px solid colors.$bg_blue;
+    outline: 2px solid colors.$bg_active;
     .active-content-container {
       max-height: 500px;
       transition: max-height 0.25s ease-in-out;
@@ -44,7 +44,7 @@
   }
 
   .selected-icon {
-    color: colors.$bg_blue;
+    color: colors.$bg_active;
     margin-left: auto;
   }
 }

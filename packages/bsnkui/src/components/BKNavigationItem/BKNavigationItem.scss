@@ -7,15 +7,15 @@
   font-size: 14px;
 
   &:focus {
-    background-color: colors.$bg_blue !important;
+    background-color: colors.$bg_active !important;
     color: white !important;
 
     &:hover {
-      background-color: colors.$bg_blue_light !important;
+      background-color: colors.$bg_active_light !important;
     }
 
     &:active {
-      background-color: colors.$bg_blue_dark !important;
+      background-color: colors.$bg_active_dark !important;
     }
   }
 }
